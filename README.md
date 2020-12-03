@@ -22,7 +22,6 @@ flutter-app/
 |- test
 ```
 
-```
 ## Want to Contribute, if you find any bug or want to upgrade a feature,
 Follow these steps:
 - Fork the project.
