@@ -1,6 +1,6 @@
 # Online Book App
 
-A simple Flutter Book app. Books will be listed with a brief description, You can read and download them.
+A simple Flutter Book app. Books are free to download and is the best place to start reading them online. Books will be listed with a brief description and have an astonishing view for books to be viewed by user.
 
 # How to Use 
 
