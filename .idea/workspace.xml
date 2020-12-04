@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="50d62078-c0cc-42b2-a5a3-6214ea958532" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1l8iPasvTwLV49FLmt3fktWp9Q8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/online_book_app" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Online Book App\online_book_app\lib\screens" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50d62078-c0cc-42b2-a5a3-6214ea958532" name="Default Changelist" comment="" />
+      <created>1606985095250</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606985095250</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1607013876439">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607013876439" />
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1607014051367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607014051367" />
+    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1607014051367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607014051367" />
+    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1607014051367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607014051367" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1607014051367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607014051367" />
+    <state x="357" y="63" width="698" height="602" key="NewModule_or_Project.wizard" timestamp="1607014025677">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="357" y="63" width="698" height="602" key="NewModule_or_Project.wizard/0.0.1366.728@0.0.1366.728" timestamp="1607014025677" />
+    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1607003885035">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1607003885035" />
+  </component>
+</project>
