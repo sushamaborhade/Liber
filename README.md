@@ -1,16 +1,35 @@
-# online_book_app
+@@ -1,2 +1,32 @@
+# Online_Book_App
+online book app in flutter
+# Online Book App
 
-A new Flutter application.
+A simple Flutter Book app. Books will be listed with a brief description, You can read and download them.
 
-## Getting Started
+# How to Use 
 
-This project is a starting point for a Flutter application.
+Go to project root and execute the following command in console to get the required dependencies: 
 
-A few resources to get you started if this is your first Flutter project:
+```
+flutter pub get 
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Folder Structure
+Here is the core folder structure which flutter provides.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+flutter-app/
+|- android
+|- build
+|- ios
+|- lib
+|- test
+```
+
+```
+## Want to Contribute, if you find any bug or want to upgrade a feature,
+Follow these steps:
+- Fork the project.
+- Create a new branch.
+- Make your changes and write tests when practical.
+- Commit your changes to the new branch.
+- Send a pull request.
