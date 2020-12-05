@@ -27,7 +27,7 @@ Follow these steps:
 - Fork the project.
 - Clone the repository to your local environment.
 
-    `$ git clone https://github.com/sushamaborhade/Online_Book_App.git`
+    `$ git clone https://github.com/sushamaborhade/Liber.git`
     
 - Make new changes, commit the changes and upload that to your GitHub.
 
