@@ -1,9 +1,6 @@
-
-# Online_Book_App
-online book app in flutter
 # Online Book App
 
-A simple Flutter Book app. Books will be listed with a brief description, You can read and download them.
+A simple Flutter Book app. Books are free to download and is the best place to start reading them online. Books will be listed with a brief description and have an astonishing view for books to be viewed by user.
 
 # How to Use 
 
@@ -25,11 +22,19 @@ flutter-app/
 |- test
 ```
 
-```
 ## Want to Contribute, if you find any bug or want to upgrade a feature,
 Follow these steps:
 - Fork the project.
-- Create a new branch.
-- Make your changes and write tests when practical.
-- Commit your changes to the new branch.
-- Send a pull request.
+- Clone the repository to your local environment.
+
+    `$ git clone https://github.com/sushamaborhade/Online_Book_App.git`
+    
+- Make new changes, commit the changes and upload that to your GitHub.
+
+    `$ git add .`
+    
+    `$ git commit -m "Your detailed description of your changes."`
+    
+    `$ git push origin branch-name`
+    
+- Send a pull request to the project repo and make sure you have updated your repository and is not overriding the existing code on the project repository.
