@@ -273,11 +273,7 @@ class _LogInState extends State<LogIn> {
 //------------------------Error List----------------------//
 
 class ErrorLine extends StatelessWidget {
-  const ErrorLine({
-    Key key,
-    @required this.errors,
-  }) : super(key: key);
-
+  const ErrorLine({Key key, @required this.errors,}) : super(key: key);
   final List<String> errors;
 
   Widget errorLine(String text) {
