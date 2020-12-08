@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec9da401-a307-4d37-b789-bf60958087ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/screens/main screens/explore.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/main screens/main__screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/main screens/settings.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/confirmation_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/confirmation_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/login.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/main screens/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/main screens/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/splash_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,29 +71,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607013876439" />
-    <state width="617" height="178" key="GridCell.Tab.0.bottom" timestamp="1607356363332">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1607450410062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="617" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607356363332" />
-    <state width="617" height="178" key="GridCell.Tab.0.center" timestamp="1607356363331">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607450410062" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1607450410062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="617" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607356363331" />
-    <state width="617" height="178" key="GridCell.Tab.0.left" timestamp="1607356363331">
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607450410062" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1607450410061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="617" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607356363331" />
-    <state width="617" height="178" key="GridCell.Tab.0.right" timestamp="1607356363331">
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607450410061" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1607450410062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="617" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607356363331" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607450410062" />
     <state x="357" y="63" width="698" height="602" key="NewModule_or_Project.wizard" timestamp="1607014025677">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="357" y="63" width="698" height="602" key="NewModule_or_Project.wizard/0.0.1366.728@0.0.1366.728" timestamp="1607014025677" />
-    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1607345702022">
+    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1607434557936">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1607345702022" />
+    <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1607434557936" />
   </component>
 </project>

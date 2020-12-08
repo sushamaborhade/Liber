@@ -6,25 +6,29 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-			appBar: AppBar(title: Text("Liber App"),),
-      body: Container(
-				padding: EdgeInsets.all(10),
-        child: Column(children: [
-						bookFeaturedSection(),
-					  categoriesTitle('Categories'),
-					  categoriesList(),
-					  recentlyAddedTitle('Recently Added'),
-					  recentlyAddedList(),
-				],),
-      )
+			appBar: AppBar(title: Text("Liber App"),centerTitle: true,),
+
+      body: _homePageList()
 	);
   }
-  Widget bookFeaturedSection()
+
+  Widget _homePageList()
 	{
+		return Container(
+			padding: EdgeInsets.all(10),
+			child: Column(children: [
+				_bookFeaturedList(),
+				_categoriesTitle('Categories'),
+				_categoriesList(),
+				_recentlyAddedTitle('Recently Added'),
+				_recentlyAddedList(),
+			],),
+		);
+	}
+  Widget _bookFeaturedList() {
 		return Expanded(flex:3,
 		  child: Container(
 				//padding: EdgeInsets.all(5),
@@ -44,8 +48,7 @@ class _HomePageState extends State<HomePage> {
 		);
 	}
 
-	Widget categoriesTitle(String title)
-	{
+	Widget _categoriesTitle(String title) {
 		return Expanded(flex:1,child: Container(child: Padding(
 			padding: EdgeInsets.symmetric(horizontal: 10.0),
 			child: Row(
@@ -57,8 +60,7 @@ class _HomePageState extends State<HomePage> {
 		)));
 	}
 
-	Widget categoriesList()
-	{
+	Widget _categoriesList() {
 		return Expanded(flex: 1,
 			child: ListView.builder(scrollDirection: Axis.horizontal,
 					itemCount: 4,itemBuilder:(context,index)
@@ -76,8 +78,7 @@ class _HomePageState extends State<HomePage> {
 		);
 	}
 
-	Widget recentlyAddedTitle(String title)
-	{
+	Widget _recentlyAddedTitle(String title) {
 		return Expanded(flex:1,child: Container(child: Padding(
 			padding: EdgeInsets.symmetric(horizontal: 10.0),
 			child: Row(
@@ -88,8 +89,7 @@ class _HomePageState extends State<HomePage> {
 			),
 		)));	}
 
-	Widget recentlyAddedList()
-	{
+	Widget _recentlyAddedList() {
 		return Expanded(flex:6,
 			child:
 				Container(padding: EdgeInsets.all(5),
@@ -105,11 +105,11 @@ class _HomePageState extends State<HomePage> {
 									child: Column(
 										crossAxisAlignment: CrossAxisAlignment.start,
 										children: [
-									Text("The Adventures of Sherlocks",style: TextStyle(fontWeight: FontWeight.bold),),
+									Text("The Adventures of Sherlocks",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
 									SizedBox(height: 5,),
-									Text("Arthur Conan Doyle",style: TextStyle(color: Colors.blue),),
+									Text("Arthur Conan Doyle",style: TextStyle(color: Colors.blue,fontSize: 14),),
 											SizedBox(height: 5,),
-											Text("The Adventures of Sherlocks by Arthur Conan Doyle is collection of 12 stories",maxLines: 3,style: TextStyle(color: Colors.grey),)
+											Text("The Adventures of Sherlocks by Arthur Conan Doyle is collection of 12 stories",maxLines: 3,style: TextStyle(fontSize: 13,color: Colors.grey),)
 								],),)),
 
 							],
@@ -120,5 +120,7 @@ class _HomePageState extends State<HomePage> {
 				),
 		);
 	}
+
+
 
 }

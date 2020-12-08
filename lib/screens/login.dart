@@ -211,7 +211,7 @@ class _LogInState extends State<LogIn> {
                             //     email: email, password: password,
                             //     )).user;
                             //     if(user != null){
-                            Navigator.pushNamed(context, '/home');
+                            Navigator.pushNamed(context, '/mainscreen');
                             //       }
                             //   }catch(e){
                             //     print(e);

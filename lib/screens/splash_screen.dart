@@ -19,7 +19,7 @@ class _SplashState extends State<Splash> {
     localStorage = await SharedPreferences.getInstance();
     newuser = (localStorage.getBool('login') ?? true);
     if(newuser == false){
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/mainscreen');
     }
     else{
       Navigator.pushNamed(context, '/reg');
