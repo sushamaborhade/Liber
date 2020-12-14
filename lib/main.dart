@@ -36,7 +36,7 @@ class myApp extends StatelessWidget {
         primaryColor: Colors.deepPurple,
         accentColor: Colors.blue,
       ),
-      home:MainScreen (),
+      home:Splash (),
     );
   }
 }
