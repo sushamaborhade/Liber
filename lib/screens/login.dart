@@ -35,7 +35,7 @@ class _LogInState extends State<LogIn> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25.0),
               border: Border.all(
-                color: Theme.of(context).accentColor,
+                color: Colors.white,
                 width: 2.0,
               )),
           child: Padding(
@@ -117,7 +117,7 @@ class _LogInState extends State<LogIn> {
                 decoration: InputDecoration(
                   prefixIcon: Icon(
                     icon,
-                    color: Theme.of(context).primaryColor,
+                    color: Colors.black,
                   ),
                   hintText: text,
                   suffixIcon: pass == true
@@ -125,11 +125,11 @@ class _LogInState extends State<LogIn> {
                           icon: (val == true)
                               ? Icon(
                                   LineAwesomeIcons.eye,
-                                  color: Theme.of(context).primaryColor,
+                                  color: Colors.black45,
                                 )
                               : Icon(
                                   LineAwesomeIcons.eye_slash,
-                                  color: Theme.of(context).primaryColor,
+                                  color: Colors.black45,
                                 ),
                           onPressed: () {
                             setState(() {
@@ -147,125 +147,140 @@ class _LogInState extends State<LogIn> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: ListView(children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: IconButton(
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.grey[700],
-                    size: 30.0,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  }),
-            ),
-            Spacer(flex: 1),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Text(
-                'Log In',
-                style: TextStyle(
-                    color: Colors.grey, fontSize: 25.0, letterSpacing: .5),
-              ),
-            ),
-            Spacer(flex: 2)
-          ],
-        ),
-        Center(
-          child: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Text(
-              'Welcome Back',
-              style: TextStyle(
-                  fontSize: 35.0,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic),
-            ),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment(0.99,0.5),
+            colors: [
+              Colors.blue,
+              Colors.lightBlueAccent,
+            ],
+            tileMode: TileMode.repeated
           ),
         ),
-        Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                formFields('Email', Icons.email, false),
-                formFields('Password', Icons.lock, true),
-                ErrorLine(
-                  errors: errors,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width - 70,
-                    child: MaterialButton(
-                        onPressed: () async {
-                          if (_formKey.currentState.validate() &&
-                              errors.isEmpty) {
-                            change_value();
-                            // try{
-                            //   FirebaseUser user=
-                            //   (await FirebaseAuth.instance.signInWithEmailAndPassword(
-                            //     email: email, password: password,
-                            //     )).user;
-                            //     if(user != null){
-                            Navigator.pushNamed(context, '/home');
-                            //       }
-                            //   }catch(e){
-                            //     print(e);
-                            //     email="";
-                            //     password= "";
-                            //   }
-                            // }
-                            // ignore: todo
-                            // TODO: Firebase Athentication
-                          }
-                        },
-                        color: Theme.of(context).accentColor,
-                        elevation: 20,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Text(
-                            'LogIn',
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 20.0),
-                          ),
-                        )),
-                  ),
-                ),
-              ],
-            )),
-        Padding(
-          padding: const EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
-                "Don't have an Account ? ",
-                style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(top: 10.0),
+                child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.grey[700],
+                      size: 30.0,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/signup');
-                },
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    "Create Account ",
-                    style: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.bold),
-                  ),
+              Spacer(flex: 1),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'Log In',
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 25.0, letterSpacing: .5,fontWeight: FontWeight.w400),
                 ),
-              )
+              ),
+              Spacer(flex: 2)
             ],
           ),
-        )
-      ]),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Text(
+                'Welcome Back',
+                style: TextStyle(
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Pacifico',
+                    color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  formFields('Email', Icons.email, false),
+                  formFields('Password', Icons.lock, true),
+                  ErrorLine(
+                    errors: errors,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width - 70,
+                      child: MaterialButton(
+                          onPressed: () async {
+                            if (_formKey.currentState.validate() &&
+                                errors.isEmpty) {
+                              change_value();
+                              // try{
+                              //   FirebaseUser user=
+                              //   (await FirebaseAuth.instance.signInWithEmailAndPassword(
+                              //     email: email, password: password,
+                              //     )).user;
+                              //     if(user != null){
+                              Navigator.pushNamed(context, '/mainscreen');
+                              //       }
+                              //   }catch(e){
+                              //     print(e);
+                              //     email="";
+                              //     password= "";
+                              //   }
+                              // }
+                              // ignore: todo
+                              // TODO: Firebase Athentication
+                            }
+                          },
+                          color: Theme.of(context).accentColor,
+                          elevation: 20,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Text(
+                              'LogIn',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20.0,fontFamily: 'Pacifico'),
+                            ),
+                          )),
+                    ),
+                  ),
+                ],
+              )),
+          Padding(
+            padding: const EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an Account ? ",
+                  style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/signup');
+                  },
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      "Create Account ",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
+        ]),
+      ),
     ));
   }
 }
@@ -273,11 +288,7 @@ class _LogInState extends State<LogIn> {
 //------------------------Error List----------------------//
 
 class ErrorLine extends StatelessWidget {
-  const ErrorLine({
-    Key key,
-    @required this.errors,
-  }) : super(key: key);
-
+  const ErrorLine({Key key, @required this.errors,}) : super(key: key);
   final List<String> errors;
 
   Widget errorLine(String text) {

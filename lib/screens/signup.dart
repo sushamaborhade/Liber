@@ -32,7 +32,7 @@ class _SignUpState extends State<SignUp> {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25.0),
             border: Border.all(
-              color: Theme.of(context).accentColor,
+              color: Colors.white,
               width: 2.0,
             )),
         child: Padding(
@@ -138,7 +138,7 @@ class _SignUpState extends State<SignUp> {
             decoration: InputDecoration(
               prefixIcon: Icon(
                 icon,
-                color: Theme.of(context).primaryColor,
+                color: Colors.black,
               ),
               hintText: text,
               suffixIcon: val == 2
@@ -146,11 +146,11 @@ class _SignUpState extends State<SignUp> {
                       icon: values == true
                           ? Icon(
                               LineAwesomeIcons.eye,
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.black45,
                             )
                           : Icon(
                               LineAwesomeIcons.eye_slash,
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.black45,
                             ),
                       onPressed: () {
                         setState(() {
@@ -170,127 +170,142 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: ListView(children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: IconButton(
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.grey[700],
-                    size: 30.0,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  }),
-            ),
-            Spacer(flex: 1),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Text(
-                'SignUp',
-                style: TextStyle(
-                    color: Colors.grey, fontSize: 25.0, letterSpacing: .5),
-              ),
-            ),
-            Spacer(flex: 2)
-          ],
-        ),
-        Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(
-              'Register Account',
-              style: TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic),
-            ),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment(0.99,0.5),
+              colors: [
+                Colors.blue,
+                Colors.lightBlueAccent,
+              ],
+              tileMode: TileMode.repeated
           ),
         ),
-        Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                formFields(
-                  'Name',
-                  Icons.person,
-                  0,
+        child: ListView(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 10.0),
+                child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.grey[700],
+                      size: 30.0,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
+              ),
+              Spacer(flex: 1),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'SignUp',
+                  style: TextStyle(
+                      color: Colors.white, fontSize: 25.0, letterSpacing: .5,fontWeight: FontWeight.w400),
                 ),
-                formFields(
-                  'Email',
-                  Icons.email,
-                  1,
-                ),
-                formFields(
-                  'Password',
-                  Icons.lock,
-                  2,
-                ),
-                ErrorLine(
-                  errors: errors,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width - 70,
-                    child: MaterialButton(
-                        onPressed: () async {
-                          if (_formKey.currentState.validate() &&
-                              errors.isEmpty) {
-                            change_value();
-                            // try{
-                            //   FirebaseUser user = (await FirebaseAuth.instance
-                            //   .createUserWithEmailAndPassword(
-                            //     email: email, password: password
-                            //     )).user;
-                            //     if(user != null){
-                            //       UserUpdateInfo updateUser = UserUpdateInfo();
-                            //       updateUser.displayName= name;
-                            //       user.updateProfile(updateUser);
-                            Navigator.pushNamed(context, '/confirm');
-                            //       }
-                            //   }catch(e){
-                            //     print(e);
-                            //     name="";
-                            //     email= "";
-                            //     password= "";
-                            //   }
-                            // }
-                            // ignore: todo
-                            // TODO: Firebase Authentication
-                          }
-                        },
-                        color: Theme.of(context).accentColor,
-                        elevation: 20,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Text(
-                            'SignUp',
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 20.0),
-                          ),
-                        )),
-                  ),
-                ),
-              ],
-            )),
-        SizedBox(
-          height: 30.0,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 20.0, right: 20.0, left: 20.0),
-          child: Expanded(
+              ),
+              Spacer(flex: 2)
+            ],
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Text(
-            'By clicking you confirm that you agree with our Terms and Conditions',
-            textAlign: TextAlign.center,
-          )),
-        )
-      ]),
+                'Register Account',
+                style: TextStyle(
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Pacifico',
+                    color: Colors.white
+                ),
+              ),
+            ),
+          ),
+          Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  formFields(
+                    'Name',
+                    Icons.person,
+                    0,
+                  ),
+                  formFields(
+                    'Email',
+                    Icons.email,
+                    1,
+                  ),
+                  formFields(
+                    'Password',
+                    Icons.lock,
+                    2,
+                  ),
+                  ErrorLine(
+                    errors: errors,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width - 70,
+                      child: MaterialButton(
+                          onPressed: () async {
+                            if (_formKey.currentState.validate() &&
+                                errors.isEmpty) {
+                              change_value();
+                              // try{
+                              //   FirebaseUser user = (await FirebaseAuth.instance
+                              //   .createUserWithEmailAndPassword(
+                              //     email: email, password: password
+                              //     )).user;
+                              //     if(user != null){
+                              //       UserUpdateInfo updateUser = UserUpdateInfo();
+                              //       updateUser.displayName= name;
+                              //       user.updateProfile(updateUser);
+                              Navigator.pushNamed(context, '/confirm');
+                              //       }
+                              //   }catch(e){
+                              //     print(e);
+                              //     name="";
+                              //     email= "";
+                              //     password= "";
+                              //   }
+                              // }
+                              // ignore: todo
+                              // TODO: Firebase Authentication
+                            }
+                          },
+                          color: Theme.of(context).accentColor,
+                          elevation: 20,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Text(
+                              'SignUp',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20.0,fontFamily: 'Pacifico'),
+                            ),
+                          )),
+                    ),
+                  ),
+                ],
+              )),
+          SizedBox(
+            height: 30.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20.0, right: 20.0, left: 20.0),
+            child: Expanded(
+                child: Text(
+              'By clicking you confirm that you agree with our Terms and Conditions',
+              textAlign: TextAlign.center,
+            )),
+          )
+        ]),
+      ),
     ));
   }
 }

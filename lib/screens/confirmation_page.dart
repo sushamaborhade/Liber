@@ -41,7 +41,7 @@ class _ConfirmState extends State<Confirm> {
                 width: MediaQuery.of(context).size.width - 70,
                   child: MaterialButton(
                     onPressed: (){
-                      Navigator.pushNamed(context, '/home');
+                      Navigator.pushNamed(context, '/mainscreen');
                     },
                     color: Theme.of(context).accentColor,
                     elevation: 20,
