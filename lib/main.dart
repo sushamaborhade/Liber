@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:online_book_app/screens/confirmation_page.dart';
-import 'package:online_book_app/screens/login.dart';
-import 'package:online_book_app/screens/registration.dart';
-import 'package:online_book_app/screens/signup.dart';
-import 'package:online_book_app/screens/splash_screen.dart';
+import 'screens/splash_screen.dart';
+import 'screens/registration.dart';
+import 'screens/login.dart';
+import 'screens/signup.dart';
+import 'screens/confirmation_page.dart';
 
-import 'screens/main screens/explore.dart';
-import 'screens/main screens/home.dart';
-import 'screens/main screens/main__screen.dart';
-import 'screens/main screens/settings.dart';
-
+import 'screens/main screens/nav_bar.dart';
+import 'screens/main screens/settings/about.dart';
+import 'screens/main screens/settings/downloads.dart';
 void main(){
   runApp(myApp());
 }
@@ -24,17 +22,16 @@ class myApp extends StatelessWidget {
         '/signup': (context) => SignUp(),
         '/login': (context) => LogIn(),
         '/confirm': (context) => Confirm(),
-        '/mainscreen': (context) => MainScreen(),
-        '/home': (context) => HomePage(),
-        '/explore': (context) => ExplorePage(),
-        '/settings': (context) => SettingsPage(),
-
+        '/nav': (context) => NavBar(),
+        '/download': (context) => Downloads(),
+        '/about': (context) => About(),
       },
       title: 'LIBER',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.deepPurple,
-        accentColor: Colors.blue,
+        primaryColor: Colors.black,
+        accentColor: Colors.white,
+        brightness: Brightness.dark,
       ),
       home:Splash (),
     );

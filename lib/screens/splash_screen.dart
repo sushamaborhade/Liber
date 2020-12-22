@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -35,7 +34,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
     controller=AnimationController(
       duration: Duration(seconds: 2),
-      vsync: this,
+      value: this,
     );
 
     animation=ColorTween(begin: Colors.white,end: Colors.black).animate(controller);
