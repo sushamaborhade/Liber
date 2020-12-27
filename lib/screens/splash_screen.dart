@@ -20,7 +20,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     localStorage = await SharedPreferences.getInstance();
     newuser = (localStorage.getBool('login') ?? true);
     if(newuser == false){
-      Navigator.pushNamed(context, '/mainscreen');
+      Navigator.pushNamed(context, '/nav');
     }
     else{
       Navigator.pushNamed(context, '/reg');

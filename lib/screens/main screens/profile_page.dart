@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:online_book_app/screens/login.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -7,34 +9,50 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  SharedPreferences localStorage;
+
   // function to return the items
   Widget items(var icon, var text, var page) {
     return Expanded(
       child: GestureDetector(
-        onTap: () {
-          if (page == 'license'){
+        onTap: () async {
+          if (page == 'license') {
             showAboutDialog(
-              context: context,
-              applicationIcon: FlutterLogo(),
-              applicationName: 'LIBER',
-              applicationVersion: '0.0.1',
-              applicationLegalese: "Developed on Github in Sushama Borhade's Repo",
-              children: [
-                SizedBox(height: 10.0,),
-                Text("THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND ANY EXPRESS OR IMPLIED WARRANTIES, "
-                "INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. "
-                "IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR "
-                "CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; "
-                "LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, "
-                "STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED "
-                "OF THE POSSIBILITY OF SUCH DAMAGE.")
-              ]
-              );
+                context: context,
+                applicationIcon: FlutterLogo(),
+                applicationName: 'LIBER',
+                applicationVersion: '0.0.1',
+                applicationLegalese:
+                    "Developed on Github in Sushama Borhade's Repo",
+                children: [
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text(
+                      "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND ANY EXPRESS OR IMPLIED WARRANTIES, "
+                      "INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. "
+                      "IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR "
+                      "CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; "
+                      "LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, "
+                      "STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED "
+                      "OF THE POSSIBILITY OF SUCH DAMAGE.")
+                ]);
           }
-          else{
+          if (page == 'logout') {
+            localStorage = await SharedPreferences.getInstance();
+            await localStorage.setBool('login', true);
+
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => LogIn(),
+              ),
+              (route) => false,
+            );
+            // Navigator.pushNamed(context, '/login');
+          } else {
             Navigator.pushNamed(context, page);
-            }
-          
+          }
         },
         child: Container(
           height: 10.0,
@@ -140,7 +158,7 @@ class _ProfilePageState extends State<ProfilePage> {
           items(Icons.download_outlined, 'Downloads', '/download'),
           items(Icons.insert_drive_file_outlined, 'License', 'license'),
           items(Icons.home, 'About', '/about'),
-          items(Icons.logout, 'Logout', ''),
+          items(Icons.logout, 'Logout', 'logout'),
         ]),
       ),
     );

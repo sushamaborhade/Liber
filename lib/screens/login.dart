@@ -30,117 +30,107 @@ class _LogInState extends State<LogIn> {
     return Padding(
         padding: const EdgeInsets.only(
             top: 20.0, bottom: 10.0, right: 30.0, left: 30.0),
-        child: Container(
-          height: 60.0,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.0),
-              border: Border.all(
-                color: Colors.white,
-                width: 2.0,
-              )),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-                keyboardType: pass == false
-                    ? TextInputType.emailAddress
-                    : TextInputType.visiblePassword,
-                onSaved: (value) {
-                  if (pass == false) {
-                    setState(() {
-                      email = value;
-                    });
-                  }
-                  if (pass == true) {
-                    setState(() {
-                      password = value;
-                    });
-                  }
-                },
-                onChanged: (value) {
-                  if (value.isNotEmpty && errors.contains("Cannot be Empty")) {
-                    setState(() {
-                      errors.remove("Cannot be Empty");
-                    });
-                  }
-                  if (pass == true) {
-                    if (value.length >= 6 &&
-                        errors.contains(
-                            "Password should have atleast 6 characters.")) {
-                      setState(() {
-                        errors.remove(
-                            "Password should have atleast 6 characters.");
-                      });
-                    }
-                  }
-                  if (pass == false) {
-                    if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                            .hasMatch(value) &&
-                        errors.contains("Invalid Email Id.")) {
-                      setState(() {
-                        errors.remove("Invalid Email Id.");
-                      });
-                    }
-                  }
-                },
-                validator: (value) {
-                  if (value.isEmpty && !errors.contains("Cannot be Empty")) {
-                    setState(() {
-                      errors.add("Cannot be Empty");
-                    });
-                    return null;
-                  }
-                  if (pass == true) {
-                    if (value.length < 6 &&
-                        !errors.contains(
-                            "Password should have atleast 6 characters.")) {
-                      setState(() {
-                        errors
-                            .add("Password should have atleast 6 characters.");
-                      });
-                      return null;
-                    }
-                  }
-                  if (pass == false) {
-                    if (!(RegExp(
-                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                            .hasMatch(value)) &&
-                        !errors.contains("Invalid Email Id.")) {
-                      setState(() {
-                        errors.add("Invalid Email Id.");
-                      });
-                      return null;
-                    }
-                  }
+        child: TextFormField(
+            keyboardType: pass == false
+                ? TextInputType.emailAddress
+                : TextInputType.visiblePassword,
+            onSaved: (value) {
+              if (pass == false) {
+                setState(() {
+                  email = value;
+                });
+              }
+              if (pass == true) {
+                setState(() {
+                  password = value;
+                });
+              }
+            },
+            onChanged: (value) {
+              if (value.isNotEmpty && errors.contains("Cannot be Empty")) {
+                setState(() {
+                  errors.remove("Cannot be Empty");
+                });
+              }
+              if (pass == true) {
+                if (value.length >= 6 &&
+                    errors.contains(
+                        "Password should have atleast 6 characters.")) {
+                  setState(() {
+                    errors.remove("Password should have atleast 6 characters.");
+                  });
+                }
+              }
+              if (pass == false) {
+                if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                        .hasMatch(value) &&
+                    errors.contains("Invalid Email Id.")) {
+                  setState(() {
+                    errors.remove("Invalid Email Id.");
+                  });
+                }
+              }
+            },
+            validator: (value) {
+              if (value.isEmpty && !errors.contains("Cannot be Empty")) {
+                setState(() {
+                  errors.add("Cannot be Empty");
+                });
+                return null;
+              }
+              if (pass == true) {
+                if (value.length < 6 &&
+                    !errors.contains(
+                        "Password should have atleast 6 characters.")) {
+                  setState(() {
+                    errors.add("Password should have atleast 6 characters.");
+                  });
                   return null;
-                },
-                obscureText: (pass == true && val == true) ? true : false,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    icon,
-                    color: Colors.black,
-                  ),
-                  hintText: text,
-                  suffixIcon: pass == true
-                      ? IconButton(
-                          icon: (val == true)
-                              ? Icon(
-                                  LineAwesomeIcons.eye,
-                                  color: Colors.black45,
-                                )
-                              : Icon(
-                                  LineAwesomeIcons.eye_slash,
-                                  color: Colors.black45,
-                                ),
-                          onPressed: () {
-                            setState(() {
-                              val = !val;
-                            });
-                          })
-                      : Icon(null),
-                  border: InputBorder.none,
-                )),
-          ),
-        ));
+                }
+              }
+              if (pass == false) {
+                if (!(RegExp(
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                        .hasMatch(value)) &&
+                    !errors.contains("Invalid Email Id.")) {
+                  setState(() {
+                    errors.add("Invalid Email Id.");
+                  });
+                  return null;
+                }
+              }
+              return null;
+            },
+            obscureText: (pass == true && val == true) ? true : false,
+            style: TextStyle(decoration: TextDecoration.none),
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                icon,
+                color: Colors.black,
+              ),
+              hintText: text,
+              suffixIcon: pass == true
+                  ? IconButton(
+                      icon: (val == true)
+                          ? Icon(
+                              LineAwesomeIcons.eye,
+                              color: Colors.black45,
+                            )
+                          : Icon(
+                              LineAwesomeIcons.eye_slash,
+                              color: Colors.black45,
+                            ),
+                      onPressed: () {
+                        setState(() {
+                          val = !val;
+                        });
+                      })
+                  : Icon(null),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: BorderSide(
+                      width: 2.0, color: Theme.of(context).accentColor)),
+            )));
   }
 
   @override
@@ -150,42 +140,32 @@ class _LogInState extends State<LogIn> {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment(0.99,0.5),
-            colors: [
-              Colors.blue,
-              Colors.lightBlueAccent,
-            ],
-            tileMode: TileMode.repeated
-          ),
+              begin: Alignment.topLeft,
+              end: Alignment(0.99, 0.5),
+              colors: [
+                Colors.blue,
+                Colors.lightBlueAccent,
+              ],
+              tileMode: TileMode.repeated),
         ),
         child: ListView(children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: IconButton(
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.grey[700],
-                      size: 30.0,
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }),
-              ),
-              Spacer(flex: 1),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Text(
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
                   'Log In',
                   style: TextStyle(
-                      color: Colors.white, fontSize: 25.0, letterSpacing: .5,fontWeight: FontWeight.w400),
+                    color: Colors.white,
+                    fontSize: 25.0,
+                    letterSpacing: .5,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Langar',
+                  ),
                 ),
-              ),
-              Spacer(flex: 2)
-            ],
+              ],
+            ),
           ),
           Center(
             child: Padding(
@@ -193,10 +173,10 @@ class _LogInState extends State<LogIn> {
               child: Text(
                 'Welcome Back',
                 style: TextStyle(
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.w300,
-                    fontFamily: 'Pacifico',
-                    color: Colors.white,
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Pacifico',
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -225,7 +205,7 @@ class _LogInState extends State<LogIn> {
                               //     email: email, password: password,
                               //     )).user;
                               //     if(user != null){
-                              Navigator.pushNamed(context, '/mainscreen');
+                              Navigator.pushNamed(context, '/nav');
                               //       }
                               //   }catch(e){
                               //     print(e);
@@ -237,16 +217,20 @@ class _LogInState extends State<LogIn> {
                               // TODO: Firebase Athentication
                             }
                           },
-                          color: Theme.of(context).accentColor,
-                          elevation: 20,
+                          color: Colors.transparent,
                           shape: RoundedRectangleBorder(
+                              side: BorderSide(
+                                  color: Theme.of(context).accentColor,
+                                  width: 3.0),
                               borderRadius: BorderRadius.circular(20)),
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: Text(
                               'LogIn',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20.0,fontFamily: 'Pacifico'),
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25.0,
+                                  fontFamily: 'Pacifico'),
                             ),
                           )),
                     ),
@@ -258,10 +242,11 @@ class _LogInState extends State<LogIn> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Don't have an Account ? ",
-                  style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold),
-                ),
+                Text("Don't have an Account ? ",
+                    style: TextStyle(
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor)),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/signup');
@@ -271,8 +256,7 @@ class _LogInState extends State<LogIn> {
                     child: Text(
                       "Create Account ",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
@@ -288,7 +272,10 @@ class _LogInState extends State<LogIn> {
 //------------------------Error List----------------------//
 
 class ErrorLine extends StatelessWidget {
-  const ErrorLine({Key key, @required this.errors,}) : super(key: key);
+  const ErrorLine({
+    Key key,
+    @required this.errors,
+  }) : super(key: key);
   final List<String> errors;
 
   Widget errorLine(String text) {
@@ -300,13 +287,13 @@ class ErrorLine extends StatelessWidget {
             Icon(
               Icons.error,
               size: 18.0,
-              color: Colors.red,
+              color: Colors.red[900],
             ),
             Padding(
               padding: const EdgeInsets.only(left: 5.0),
               child: Text(
                 text,
-                style: TextStyle(color: Colors.red),
+                style: TextStyle(color: Colors.red[900]),
               ),
             ),
           ],

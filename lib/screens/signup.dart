@@ -27,140 +27,132 @@ class _SignUpState extends State<SignUp> {
     return Padding(
       padding: const EdgeInsets.only(
           top: 10.0, bottom: 10.0, right: 30.0, left: 30.0),
-      child: Container(
-        height: 60.0,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25.0),
-            border: Border.all(
-              color: Colors.white,
-              width: 2.0,
-            )),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextFormField(
-            onSaved: (detail) {
-              if (val == 0) {
-                setState(() {
-                  name = detail;
-                });
-              }
-              if (val == 1) {
-                setState(() {
-                  email = detail;
-                });
-              }
-              if (val == 2) {
-                setState(() {
-                  password = detail;
-                });
-              }
-            },
-            keyboardType: val == 0
-                ? TextInputType.name
-                : (val == 1
-                    ? TextInputType.emailAddress
-                    : TextInputType.visiblePassword),
-            onChanged: (value) {
-              if (value.isNotEmpty &&
-                  errors.contains("Required.. Cannot be Empty")) {
-                setState(() {
-                  errors.remove("Required.. Cannot be Empty");
-                });
-              }
-              if (val == 0) {
-                if (value.length >= 3 &&
-                    errors.contains("Should have atleast 3 characters.")) {
-                  setState(() {
-                    errors.remove("Should have atleast 3 characters.");
-                  });
-                }
-              }
-              if (val == 2) {
-                if (value.length >= 6 &&
-                    errors.contains(
-                        "Password should have atleast 6 characters.")) {
-                  setState(() {
-                    errors.remove("Password should have atleast 6 characters.");
-                  });
-                }
-              }
-              if (val == 1) {
-                if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                        .hasMatch(value) &&
-                    errors.contains("Please write a valid email id.")) {
-                  setState(() {
-                    errors.remove("Please write a valid email id.");
-                  });
-                }
-              }
-            },
-            validator: (value) {
-              if (value.isEmpty &&
-                  !errors.contains("Required.. Cannot be Empty")) {
-                setState(() {
-                  errors.add("Required.. Cannot be Empty");
-                });
-                return null;
-              }
-              if (val == 0) {
-                if (value.length < 3 &&
-                    !errors.contains("Should have atleast 3 characters.")) {
-                  setState(() {
-                    errors.add("Should have atleast 3 characters.");
-                  });
-                  return null;
-                }
-              }
-              if (val == 2) {
-                if (value.length < 6 &&
-                    !errors.contains(
-                        "Password should have atleast 6 characters.")) {
-                  setState(() {
-                    errors.add("Password should have atleast 6 characters.");
-                  });
-                  return null;
-                }
-              }
-              if (val == 1) {
-                if (!(RegExp(
-                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                        .hasMatch(value)) &&
-                    !errors.contains("Please write a valid email id.")) {
-                  setState(() {
-                    errors.add("Please write a valid email id.");
-                  });
-                  return null;
-                }
-              }
+      child: TextFormField(
+        onSaved: (detail) {
+          if (val == 0) {
+            setState(() {
+              name = detail;
+            });
+          }
+          if (val == 1) {
+            setState(() {
+              email = detail;
+            });
+          }
+          if (val == 2) {
+            setState(() {
+              password = detail;
+            });
+          }
+        },
+        keyboardType: val == 0
+            ? TextInputType.name
+            : (val == 1
+                ? TextInputType.emailAddress
+                : TextInputType.visiblePassword),
+        onChanged: (value) {
+          if (value.isNotEmpty &&
+              errors.contains("Required.. Cannot be Empty")) {
+            setState(() {
+              errors.remove("Required.. Cannot be Empty");
+            });
+          }
+          if (val == 0) {
+            if (value.length >= 3 &&
+                errors.contains("Should have atleast 3 characters.")) {
+              setState(() {
+                errors.remove("Should have atleast 3 characters.");
+              });
+            }
+          }
+          if (val == 2) {
+            if (value.length >= 6 &&
+                errors.contains(
+                    "Password should have atleast 6 characters.")) {
+              setState(() {
+                errors.remove("Password should have atleast 6 characters.");
+              });
+            }
+          }
+          if (val == 1) {
+            if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                    .hasMatch(value) &&
+                errors.contains("Please write a valid email id.")) {
+              setState(() {
+                errors.remove("Please write a valid email id.");
+              });
+            }
+          }
+        },
+        validator: (value) {
+          if (value.isEmpty &&
+              !errors.contains("Required.. Cannot be Empty")) {
+            setState(() {
+              errors.add("Required.. Cannot be Empty");
+            });
+            return null;
+          }
+          if (val == 0) {
+            if (value.length < 3 &&
+                !errors.contains("Should have atleast 3 characters.")) {
+              setState(() {
+                errors.add("Should have atleast 3 characters.");
+              });
               return null;
-            },
-            obscureText: (val == 2 && values == true) ? true : false,
-            decoration: InputDecoration(
-              prefixIcon: Icon(
-                icon,
-                color: Colors.black,
-              ),
-              hintText: text,
-              suffixIcon: val == 2
-                  ? IconButton(
-                      icon: values == true
-                          ? Icon(
-                              LineAwesomeIcons.eye,
-                              color: Colors.black45,
-                            )
-                          : Icon(
-                              LineAwesomeIcons.eye_slash,
-                              color: Colors.black45,
-                            ),
-                      onPressed: () {
-                        setState(() {
-                          values = !values;
-                        });
-                      })
-                  : Icon(null),
-              border: InputBorder.none,
-            ),
+            }
+          }
+          if (val == 2) {
+            if (value.length < 6 &&
+                !errors.contains(
+                    "Password should have atleast 6 characters.")) {
+              setState(() {
+                errors.add("Password should have atleast 6 characters.");
+              });
+              return null;
+            }
+          }
+          if (val == 1) {
+            if (!(RegExp(
+                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                    .hasMatch(value)) &&
+                !errors.contains("Please write a valid email id.")) {
+              setState(() {
+                errors.add("Please write a valid email id.");
+              });
+              return null;
+            }
+          }
+          return null;
+        },
+        obscureText: (val == 2 && values == true) ? true : false,
+        decoration: InputDecoration(
+          prefixIcon: Icon(
+            icon,
+            color: Colors.black,
           ),
+          hintText: text,
+          suffixIcon: val == 2
+              ? IconButton(
+                  icon: values == true
+                      ? Icon(
+                          LineAwesomeIcons.eye,
+                          color: Colors.black45,
+                        )
+                      : Icon(
+                          LineAwesomeIcons.eye_slash,
+                          color: Colors.black45,
+                        ),
+                  onPressed: () {
+                    setState(() {
+                      values = !values;
+                    });
+                  })
+              : Icon(null),
+          border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+        ),
+        style: TextStyle(
+          decoration: TextDecoration.none
         ),
       ),
     );
@@ -187,27 +179,17 @@ class _SignUpState extends State<SignUp> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: IconButton(
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.grey[700],
-                      size: 30.0,
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }),
-              ),
-              Spacer(flex: 1),
-              Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Text(
                   'SignUp',
                   style: TextStyle(
-                      color: Colors.white, fontSize: 25.0, letterSpacing: .5,fontWeight: FontWeight.w400),
+                      fontSize: 25.0,
+                      letterSpacing: .5,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Langar'
+                      ),
                 ),
               ),
-              Spacer(flex: 2)
             ],
           ),
           Center(
@@ -277,18 +259,23 @@ class _SignUpState extends State<SignUp> {
                               // TODO: Firebase Authentication
                             }
                           },
-                          color: Theme.of(context).accentColor,
-                          elevation: 20,
+                          color: Colors.transparent,
                           shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Theme.of(context).accentColor, width: 3.0),
                               borderRadius: BorderRadius.circular(20)),
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: Text(
-                              'SignUp',
+                              'Create Account',
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 20.0,fontFamily: 'Pacifico'),
+                                  TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 25.0,
+                                    fontFamily: 'Pacifico'
+                                  ),
                             ),
-                          )),
+                          )
+                        ),
                     ),
                   ),
                 ],
@@ -302,7 +289,11 @@ class _SignUpState extends State<SignUp> {
                 child: Text(
               'By clicking you confirm that you agree with our Terms and Conditions',
               textAlign: TextAlign.center,
-            )),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            )
+            ),
           )
         ]),
       ),

@@ -120,20 +120,13 @@ class Slider extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'LIB',
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold
-                  ),
-                  ),
                   Text(
-                  'ER',
+                  'LIBER',
                   style: TextStyle(
                     fontSize: 30.0,
                     color: Theme.of(context).accentColor,
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Langar',
                   ),
                   ),
               ],
