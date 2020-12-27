@@ -34,7 +34,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
     controller=AnimationController(
       duration: Duration(seconds: 2),
-      value: this,
+      vsync: this,
     );
 
     animation=ColorTween(begin: Colors.white,end: Colors.black).animate(controller);
