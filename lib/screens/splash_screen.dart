@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -21,7 +20,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     localStorage = await SharedPreferences.getInstance();
     newuser = (localStorage.getBool('login') ?? true);
     if(newuser == false){
-      Navigator.pushNamed(context, '/mainscreen');
+      Navigator.pushNamed(context, '/nav');
     }
     else{
       Navigator.pushNamed(context, '/reg');
