@@ -15,16 +15,37 @@ Go to project root and execute the following command in console to get the requi
 flutter pub get 
 ```
 
-### Folder Structure
-Here is the core folder structure which flutter provides.
+### Folder and File Structure
+Here is the core structure of files in the app.
 
 ```
 flutter-app/
-|- android
-|- build
-|- ios
-|- lib
-|- test
+|─── android
+|─── build
+|─── ios
+|─── lib
+|   │─── main.dart        
+|   └─── screens/
+|          │─── main screens/
+|          |      │── Items/
+|          |      |      └── search_item.dart
+|          |      │── settings/
+|          |      |      │── about.dart
+|          |      |      └── downloads.dart
+|          |      │── category_page.dart
+|          |      │── home_page.dart
+|          |      │── nav_bar.dart
+|          |      │── profile_page.dart
+|          |      └── search_page.dart
+|          │── confirmation_page.dart
+|          │── login.dart
+|          │── registration.dart
+|          │── signup.dart
+|          └── splash_screen.dart
+|─── test
+|─── .gitignore
+|─── LICENSE
+└─── pubspec.yaml
 ```
 
 ## Want to Contribute, if you find any bug or want to upgrade a feature,
