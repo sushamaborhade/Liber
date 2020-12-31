@@ -49,7 +49,6 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               (route) => false,
             );
-            // Navigator.pushNamed(context, '/login');
           } else {
             Navigator.pushNamed(context, page);
           }
