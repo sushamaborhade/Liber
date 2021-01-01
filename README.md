@@ -3,6 +3,8 @@
   <h2 align="center"> 📚 A cross-platform app for online books 📚</h2>
 </p>
 
+![GitHub pull requests](https://img.shields.io/github/issues-pr/sushamaborhade/Liber) ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/sushamaborhade/Liber) ![GitHub last commit](https://img.shields.io/github/last-commit/sushamaborhade/Liber)  ![GitHub issues](https://img.shields.io/github/issues-raw/sushamaborhade/Liber) [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/sushamaborhade) [![MIT Licence](https://img.shields.io/github/license/sushamaborhade/Liber.svg?v=103)](https://opensource.org/licenses/BSD-3-Clause)
+
 # Online Book App
 
 A simple Flutter Book app. Books are free to download and is the best place to start reading them online. Books will be listed with a brief description and have an astonishing view for books to be viewed by user.
@@ -14,6 +16,20 @@ Go to project root and execute the following command in console to get the requi
 ```
 flutter pub get 
 ```
+
+### Screenshots
+
+   Main Page               |      LogIn Page           |       SignUp Page
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/utkarsh0702/Liber/blob/main/screenshots/reg_page.png)|![](https://github.com/utkarsh0702/Liber/blob/main/screenshots/login.png) |![](https://github.com/utkarsh0702/Liber/blob/main/screenshots/signup.png)
+
+   Confirmation Page       |       Home Page           |       Search Page
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/utkarsh0702/Liber/blob/main/screenshots/confirmation.png)|![](https://github.com/utkarsh0702/Liber/blob/main/screenshots/home_page.png) |![](https://github.com/utkarsh0702/Liber/blob/main/screenshots/search_page.png)
+
+   Category Page           |       Profile Page        |       License Page
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/utkarsh0702/Liber/blob/main/screenshots/category_page.png)|![](https://github.com/utkarsh0702/Liber/blob/main/screenshots/profile_page.png) |![](https://github.com/utkarsh0702/Liber/blob/main/screenshots/license.png)
 
 ### Folder and File Structure
 Here is the core structure of files in the app.
