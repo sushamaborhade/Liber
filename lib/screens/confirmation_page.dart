@@ -33,30 +33,28 @@ class _ConfirmState extends State<Confirm> {
               ),
             ),
             SizedBox(height: 50.0),
-            SizedBox(
-              width: MediaQuery.of(context).size.width - 70,
-              child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => NavBar(),
-                      ),
-                      (route) => false,
-                    );
-                  },
-                  color: Theme.of(context).primaryColor,
-                  elevation: 20,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Text(
-                      'Continue',
-                      style: TextStyle(color: Colors.white, fontSize: 20.0),
+            MaterialButton(
+              minWidth: MediaQuery.of(context).size.width - 70,
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => NavBar(),
                     ),
-                  )),
-            ),
+                    (route) => false,
+                  );
+                },
+                color: Theme.of(context).primaryColor,
+                elevation: 20,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(color: Colors.white, fontSize: 20.0),
+                  ),
+                )),
           ],
         ),
       ),
