@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:online_book_app/screens/main screens/nav_bar.dart';
 
 class LogIn extends StatefulWidget {
   @override
@@ -205,7 +206,13 @@ class _LogInState extends State<LogIn> {
                               //     email: email, password: password,
                               //     )).user;
                               //     if(user != null){
-                              Navigator.pushNamed(context, '/nav');
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) => NavBar(),
+                                ),
+                                (route) => false,
+                              );
                               //       }
                               //   }catch(e){
                               //     print(e);
